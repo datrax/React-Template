@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ca398320f28db1643a41"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "336e4539b12835dea9dc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5230,15 +5230,10 @@ function CheckIfLoggedIn() {
     }
 
     return _axios2.default.get('/validateToken').then(function (response) {
-        console.log("on then");
-        console.log(response.status);
-        console.log("on then finish");
         return true;
     }).catch(function (error) {
 
         if (error.response.status == 401) {
-            console.log(error.response);
-            console.log("fucking bitch");
             return false;
         }
     });
