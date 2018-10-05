@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { RouteComponentProps } from "react-router";
-import "isomorphic-fetch";
 import axios from 'axios';
 
 export class UserList extends Component {

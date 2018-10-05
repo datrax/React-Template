@@ -32,16 +32,11 @@ function CheckIfLoggedIn() {
 
     return axios.get('/validateToken')
         .then(function (response) {
-            console.log("on then");
-            console.log(response.status);
-            console.log("on then finish");
             return true;
         })
         .catch(function (error) {
 
             if (error.response.status == 401) {
-                console.log(error.response);
-                console.log("fucking bitch");
                 return false;
             }
         });

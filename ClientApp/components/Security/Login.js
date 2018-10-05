@@ -21,28 +21,34 @@ export class Login extends Component {
         }
 
         return (
-            <div class="col-sm-4">
-                <h2>Login</h2>
-                <hr />
-                <form action="/token" method="post" enctype="multipart/form-data">
-                    <div class="form-group row">
-                        <label for="username" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" id="username" name="username" placeholder="Email" />
+            <div className="container">
+                <div className="row vertical-offset-100">
+                    <div className="col-md-4 col-md-offset-4">
+                        <div className="panel panel-default">
+                            <div className="panel-heading">
+                                <h3 className="panel-title">Please sign in</h3>
+                            </div>
+                            <div className="panel-body">
+                                <form accept-charset="UTF-8" role="form">
+                                    <fieldset>
+                                        <div className="form-group">
+                                            <input className="form-control" placeholder="E-mail" id = "email" name="email" type="text" />
+                                        </div>
+                                        <div className="form-group">
+                                            <input className="form-control" placeholder="Password" id="password" name="password" type="password" />
+                                        </div>
+                                        <div className="checkbox">
+                                            <label>
+                                                <input name="remember" type="checkbox" value="Remember Me" /> Remember Me
+			    	    	</label>
+                                        </div>
+                                        <input className="btn btn-lg btn-success btn-block" type="button" value="Login" onClick={this.LoginClick}/>
+                                    </fieldset>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="password" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                            <button type="button" class="btn btn-primary" onClick={this.LoginClick}>Sign in</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
 
         );
@@ -53,7 +59,7 @@ export class Login extends Component {
         var that = this;
         axios.post('/token',
             {
-                "login": document.getElementById('username').value,
+                "login": document.getElementById('email').value,
                 "password": document.getElementById('password').value
             })
             .then(function (response) {
